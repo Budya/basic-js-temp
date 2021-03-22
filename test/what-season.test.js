@@ -77,13 +77,13 @@ describe('What season', () => {
             let res = null;
             try {
                 getSeason();
-            } catch(err) {
+            } catch(err) {              
               if (err._validationProp === 'NA') {
                 this.skip();
               } else {
                 res = 'FAIL';
               }
-            }
+            }            
             assert.equal(res, null);
             assert.equal(getSeason(), 'Unable to determine the time of year!');
         });
@@ -266,7 +266,7 @@ describe('What season', () => {
 
             Object.setPrototypeOf(deeperFakeDate, Object.getPrototypeOf(new Date()));
 
-            try {
+            try {                
                 getSeason(deeperFakeDate)
             } catch(err) {
                 if (err._validationProp === 'NA') {
